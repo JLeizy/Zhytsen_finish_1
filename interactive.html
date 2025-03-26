@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Жыцень ~ Весеннее пробуждение</title>
+  <link rel="icon" type="image/png" href="img/logo/Slide.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+
+  <header class="header">
+    <div class="header-content">
+      <div class="Mainp">
+        <a href="index.html" class="header-logo menu-item logo">Жыцень</a>
+        <img src="img/logo/OIG4.x0TRXX9ENTV11Wtg-removebg-preview.png" 
+             alt="Логотип Житень" 
+             class="header-logo-img">
+      </div>
+      <nav class="header-menu">
+        <a href="mythology.html" class="menu-item">Мифология</a>
+        <span class="menu-divider">|</span>
+        <a href="memori.html" class="menu-item">Памятник</a>
+        <span class="menu-divider">|</span>
+        <a href="maps.html" class="menu-item">Расположение</a>
+        <span class="menu-divider">|</span>
+        <a href="logistic.html" class="menu-item">Логистика</a>
+        <span class="menu-divider">|</span>
+        <a href="merch.html" class="menu-item">???</a>
+        <span class="menu-divider">|</span>
+        <a href="interactive.html" class="menu-item">Весеннее пробуждение</a>
+        <span class="menu-divider">|</span>
+        <a href="creators.html" class="menu-item">Авторы</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="spring-intro">
+    <div class="spring-glass-container">
+        <div class="spring-card">
+            <h2 class="spring-title">Весеннее пробуждение</h2>
+            <!-- Кнопка с плавной прокруткой -->
+            <button class="uni-cta-btn" onclick="document.getElementById('quiz-section').scrollIntoView({behavior: 'smooth'})">
+                Посетить фестиваль
+            </button>
+        </div>
+    </div>
+  </section>
+
+  <!-- Секция с добавленным ID для прокрутки -->
+  <section class="quiz-section" id="quiz-section">
+    <div class="quiz-glass-container">
+        <div class="quiz-header">
+            <h2>Зёрна правды: Мифы Жыценя</h2>
+            <div class="slide-counter">Вопрос 1/9</div>
+        </div>
+        
+        <div class="quiz-progress">
+            <div class="progress-fill"></div>
+        </div>
+        
+        <div class="quiz-slides"></div>
+
+        <div class="quiz-controls">
+            <button class="nav-btn prev-btn" onclick="prevQuestion()" disabled>← Назад</button>
+            <div class="hint-container">
+                <button class="hint-btn" onclick="showHint()">?</button>
+                <div class="hint-text hidden"></div>
+            </div>
+            <button class="nav-btn next-btn" onclick="nextQuestion()" disabled>Далее →</button>
+        </div>
+
+        <div class="quiz-result hidden">
+            <h2>Ваш результат</h2>
+            <div class="result-score">0/9</div>
+            <p class="result-text"></p>
+            <button class="uni-cta-btn" onclick="restartQuiz()">Пройти снова</button>
+        </div>
+    </div>
+  </section>
+
+  <!-- Пятнашки -->
+  <div class="game-container">
+    <div class="game-header">
+        <h1 class="game-title">🌾 Колоски-пятнашки</h1>
+        <div class="game-divider"></div>
+        <div class="game-description">
+            <div class="description-card">
+                <div class="wheat-icon">🌾</div>
+                <p class="description-text">Переставляйте колоски на свободное место, восстанавливая правильный порядок.</p>
+            </div>
+            <div class="description-card">
+                <div class="wheat-icon">🌾</div>
+                <p class="description-text">Выберите размер поля и начните новую игру!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-controls">
+        <div class="control-group">
+            <label for="fieldSize" class="control-label">Размер поля:</label>
+            <div class="size-input-container">
+                <input type="number" 
+                       min="2" 
+                       max="6" 
+                       id="fieldSize" 
+                       value="4"
+                       class="size-input">
+                <span class="input-icon"></span>
+            </div>
+        </div>
+        <button id="generateField" class="game-button">
+            <span class="button-icon">🔄</span>
+            Новая игра
+        </button>
+    </div>
+
+    <div class="game-board">
+        <div class="board-inner">
+            <table id="myTable"></table>
+        </div>
+    </div>
+    <canvas id="myCanvas"></canvas>
+</div>
+
+  <footer class="transparent-footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <div class="company-info">
+          <a href="#top" class="company-name">Жыцень</a>
+          <p class="slogan">Мифологическое существо</p>
+        </div>
+      </div>
+      <div class="footer-column">
+        <div class="footer-logo">
+          <div class="logo-wrapper">
+            <img src="img/logo/OIG4.x0TRXX9ENTV11Wtg-removebg-preview.png" 
+                 alt="Логотип Житень" 
+                 class="logo-image">
+          </div>
+        </div>
+      </div>
+      <div class="footer-column">
+        <div class="contact-info">
+          <div class="contact-line">
+            <span class="contact-icon">📱</span>
+            <a href="tel:+375443216798" class="contact-item">+375-44-321-67-98</a>
+          </div>
+          <div class="contact-line">
+            <span class="contact-icon">✉️</span>
+            <a href="mailto:Zhitsen_Project@gmail.com" class="contact-item">Zhitsen_Project@gmail.com</a>
+          </div>
+          <div class="contact-line">
+            <span class="contact-icon">📬</span>
+            <span class="contact-item">Окрестности реки Беседь, деревня Батаево, Хотимский район</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/animathion_p.js"></script>
+  <script src="js/header_animation.js"></script>
+  <script src="js/quiz_game.js"></script>
+  <script src="js/pyatnashki.js"></script>
+</body>
+</html>
